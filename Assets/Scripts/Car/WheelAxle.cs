@@ -27,6 +27,9 @@ namespace Racing
 
         private WheelHit leftWheelHit;
         private WheelHit rightWheelHit;
+
+        public bool IsMotor => isMotor;
+        public bool IsSteer => isSteer;
         #endregion
 
         #region Public API
