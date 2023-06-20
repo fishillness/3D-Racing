@@ -6,6 +6,7 @@ namespace Racing
     public class CarChassis : MonoBehaviour
     {
         [SerializeField] private WheelAxle[] wheelAxles;
+        [SerializeField] private float wheelBaseLength;
 
         [Header("DEBUG")]
         public float MotorTorque;
@@ -30,7 +31,7 @@ namespace Racing
                 wheelAxles[i].Update();
 
                 wheelAxles[i].ApplyMotorTorque(MotorTorque);
-                wheelAxles[i].ApplySteerAngle(SteerAngle);
+                wheelAxles[i].ApplySteerAngle(SteerAngle, wheelBaseLength);
                 wheelAxles[i].ApplyBrakeTorque(BrakeTorque);
             }
         }
