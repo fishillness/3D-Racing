@@ -1332,6 +1332,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 293565634}
+  breakCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.00090408325
+      value: 0.6006813
+      inSlope: 0.0000013731417
+      outSlope: 0.0000013731417
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.07753229
+    - serializedVersion: 3
+      time: 0.56076753
+      value: 0.44619644
+      inSlope: -0.645894
+      outSlope: -0.645894
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.0158548
+      outSlope: -1.0158548
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  steerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.085690394
+      outSlope: 0.085690394
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.03982621
+    - serializedVersion: 3
+      time: 0.19120973
+      value: 0.82786494
+      inSlope: 0.0056264293
+      outSlope: 0.0056264293
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.066446975
+    - serializedVersion: 3
+      time: 0.5309789
+      value: 0.7844003
+      inSlope: -0.21812169
+      outSlope: -0.21812169
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11918563
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.56070805
+      outSlope: -0.56070805
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0387401
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  autoBreakStrength: 0.05
 --- !u!4 &1596615159
 Transform:
   m_ObjectHideFlags: 0

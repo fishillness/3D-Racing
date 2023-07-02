@@ -54,6 +54,25 @@ namespace Racing
         }
         #endregion
 
+        #region Public API
+        public float GetAverageRpm()
+        {
+            float sum = 0;
+            for (int i =0; i < wheelAxles.Length; i++)
+            {
+                sum += wheelAxles[i].GetAvarageRpm();
+            }
+
+            return sum / wheelAxles.Length;
+        }
+
+        public float GetWheelSpeed()
+        {
+            return GetAverageRpm() * wheelAxles[0].GetRadius() * 2 * 0.1885f; 
+        }
+
+        #endregion
+
         #region Private methods
         private void UpdateAngularDrag()
         {

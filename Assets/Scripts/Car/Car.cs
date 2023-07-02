@@ -21,7 +21,9 @@ namespace Racing
         public float BrakeControl;
         //public float HandBrakeControl;
 
+        public float MaxSpeed => maxSpeed;
         public float LinearVelocity => chassis.LinearVelocity;
+        public float WheelSpeed => chassis.GetWheelSpeed();
 
         private void Start()
         {
