@@ -416,9 +416,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd298cc47c604b449711d03d994e331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMotorTorque: 8000
   maxSteerAngle: 15
   maxBrakeTorque: 50000
+  engineTorqueCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.041128404
+      outSlope: 0.041128404
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.2866771
+    - serializedVersion: 3
+      time: 0.14471245
+      value: 0.5835845
+      inSlope: 0.07713024
+      outSlope: 0.07713024
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.052460644
+    - serializedVersion: 3
+      time: 0.9963795
+      value: 0
+      inSlope: -0.6852261
+      outSlope: -0.6852261
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxMotorTorque: 16000
+  maxSpeed: 300
+  linearVelocity: 0
   ThrottleControl: 0
   SteerControl: 0
   BrakeControl: 0
