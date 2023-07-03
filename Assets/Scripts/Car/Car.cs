@@ -7,10 +7,17 @@ namespace Racing
     {
         [SerializeField] private float maxSteerAngle;
         [SerializeField] private float maxBrakeTorque;
-
-        [SerializeField] private AnimationCurve engineTorqueCurve;
-        [SerializeField] private float maxMotorTorque;
         [SerializeField] private float maxSpeed;
+
+        [Header("Engine")]
+        [SerializeField] private AnimationCurve engineTorqueCurve;
+        [SerializeField] private float engineMaxTorque;
+        //DEBUG
+        [SerializeField] private float engineTorque;
+        //DEBUG
+        [SerializeField] private float engineRpm;
+        [SerializeField] private float engineMinRpm;
+        [SerializeField] private float engineMaxRpm;
 
         private CarChassis chassis;
 
@@ -35,13 +42,22 @@ namespace Racing
             //DEBUG
             linearVelocity = LinearVelocity;
 
-            float engineTorque = engineTorqueCurve.Evaluate(LinearVelocity / maxSpeed) * maxMotorTorque;
+            UpdateEngineTorque();
+            
             if (LinearVelocity >= maxSpeed)
                 engineTorque = 0;
 
             chassis.MotorTorque = engineTorque * ThrottleControl;
             chassis.SteerAngle = maxSteerAngle * SteerControl;
             chassis.BrakeTorque = maxBrakeTorque * BrakeControl;
+        }
+
+        private void UpdateEngineTorque()
+        {
+            engineRpm = engineMinRpm + Mathf.Abs(chassis.GetAverageRpm() * 3.7f);
+            engineRpm = Mathf.Clamp(engineRpm, engineMinRpm, engineMaxRpm);
+
+            engineTorque = engineTorqueCurve.Evaluate(engineRpm / engineMaxRpm) * engineMaxTorque;
         }
     }
 }

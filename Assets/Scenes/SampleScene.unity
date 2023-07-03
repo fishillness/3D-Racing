@@ -418,41 +418,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSteerAngle: 15
   maxBrakeTorque: 50000
+  maxSpeed: 300
   engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0.041128404
-      outSlope: 0.041128404
+      value: 0
+      inSlope: -0.4148195
+      outSlope: -0.4148195
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0.2866771
+      inWeight: 0.33333334
+      outWeight: 0.38041842
     - serializedVersion: 3
-      time: 0.14471245
-      value: 0.5835845
+      time: 0.13800117
+      value: 0.68492514
+      inSlope: 0.07181906
+      outSlope: 0.07181906
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.7732227
+    - serializedVersion: 3
+      time: 0.21477906
+      value: 0.9993575
+      inSlope: 0.02408535
+      outSlope: 0.02408535
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.69352645
+      outWeight: 0.1564131
+    - serializedVersion: 3
+      time: 0.5690751
+      value: 0.99608344
+      inSlope: 0.016414551
+      outSlope: 0.016414551
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07483338
+      outWeight: 0.12729982
+    - serializedVersion: 3
+      time: 1
+      value: 0.049792483
       inSlope: 0.07713024
       outSlope: 0.07713024
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.052460644
-    - serializedVersion: 3
-      time: 0.9963795
-      value: 0
-      inSlope: -0.6852261
-      outSlope: -0.6852261
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxMotorTorque: 16000
-  maxSpeed: 300
+  engineMaxTorque: 20000
+  engineTorque: 0
+  engineRpm: 0
+  engineMinRpm: 800
+  engineMaxRpm: 7000
   linearVelocity: 0
   ThrottleControl: 0
   SteerControl: 0
