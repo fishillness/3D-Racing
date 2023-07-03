@@ -470,11 +470,23 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  engineMaxTorque: 20000
-  engineTorque: 0
-  engineRpm: 0
+  engineMaxTorque: 500
   engineMinRpm: 800
   engineMaxRpm: 7000
+  engineTorque: 0
+  engineRpm: 0
+  gears:
+  - 3.77
+  - 2.6
+  - 1.6
+  - 1
+  - 0.7
+  finalDriveRatio: 4.7
+  rearGear: -3.7
+  upShiftEngineRpm: 6400
+  downShiftEngineRpm: 3000
+  selectedGear: 3.77
+  selectedGearIndex: 0
   linearVelocity: 0
   ThrottleControl: 0
   SteerControl: 0

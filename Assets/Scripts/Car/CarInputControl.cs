@@ -33,6 +33,12 @@ namespace Racing
             UpdateSteer();
             UpdateAutoBreak();
             //UpdateBreak();
+
+            //DEBUG
+            if (Input.GetKeyDown(KeyCode.E))
+                car.UpGear();
+            if (Input.GetKeyDown(KeyCode.Q))
+                car.DownGear();
         }
 
         private void UpdateAxis()
@@ -47,13 +53,27 @@ namespace Racing
             if (Mathf.Sign(verticalAxis) == Mathf.Sign(wheelSpeed)
                 || Mathf.Abs(wheelSpeed) < directionMeasurementError)
             {
-                car.ThrottleControl = verticalAxis;
+                car.ThrottleControl = Mathf.Abs(verticalAxis);
                 car.BrakeControl = 0;
             }
             else
             {
                 car.ThrottleControl = 0;
                 car.BrakeControl = breakCurve.Evaluate(wheelSpeed / maxSpeed);
+            }
+
+            //Gear
+            if (verticalAxis < 0 
+                && wheelSpeed > -directionMeasurementError 
+                && wheelSpeed <= directionMeasurementError)
+            {
+                car.ShiftToReverseGear();
+            }
+            if (verticalAxis > 0 
+                && wheelSpeed > -directionMeasurementError 
+                && wheelSpeed <= directionMeasurementError)
+            {
+                car.ShiftToFirstGear();
             }
         }
 
