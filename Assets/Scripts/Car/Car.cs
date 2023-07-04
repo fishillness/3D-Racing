@@ -41,6 +41,9 @@ namespace Racing
         public float MaxSpeed => maxSpeed;
         public float LinearVelocity => chassis.LinearVelocity;
         public float WheelSpeed => chassis.GetWheelSpeed();
+        public float SelectedGearIndex => selectedGearIndex;
+        public float EngineRpm => engineRpm;
+        public float UpShiftEngineRpm => upShiftEngineRpm;
         #endregion
 
         #region Unity Events
