@@ -43,6 +43,7 @@ namespace Racing
         public float WheelSpeed => chassis.GetWheelSpeed();
         public float SelectedGearIndex => selectedGearIndex;
         public float EngineRpm => engineRpm;
+        public float EngineMaxRpm => engineMaxRpm;
         public float UpShiftEngineRpm => upShiftEngineRpm;
         #endregion
 
