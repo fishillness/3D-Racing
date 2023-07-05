@@ -6,6 +6,7 @@ namespace Racing
     {
         [SerializeField] private GameObject skidPrefab;
         [SerializeField] private WheelCollider[] wheels;
+        [SerializeField] private ParticleSystem[] wheelsSmoke;
 
         [SerializeField] private float forwardSlipLimit;
         [SerializeField] private float sidewaySlipLimit;
@@ -37,6 +38,9 @@ namespace Racing
                             skidTrail[i].position = wheels[i].transform.position -
                                 wheelHit.normal * wheels[i].radius;
                             skidTrail[i].forward = -wheelHit.normal;
+
+                            wheelsSmoke[i].transform.position = skidTrail[i].position;
+                            wheelsSmoke[i].Emit(1);
                         }
 
                         continue;
@@ -44,6 +48,7 @@ namespace Racing
                 }
 
                 skidTrail[i] = null;
+                wheelsSmoke[i].Stop();
             }
         }
     }
