@@ -40,6 +40,7 @@ namespace Racing
 
         public float MaxSpeed => maxSpeed;
         public float LinearVelocity => chassis.LinearVelocity;
+        public float NormaliaLinearVelocity => chassis.LinearVelocity / maxSpeed;
         public float WheelSpeed => chassis.GetWheelSpeed();
         public float SelectedGearIndex => selectedGearIndex;
         public float EngineRpm => engineRpm;
