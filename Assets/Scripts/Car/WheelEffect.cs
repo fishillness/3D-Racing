@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace Racing
 {
-    [RequireComponent(typeof(AudioSource))]
     public class WheelEffect : MonoBehaviour
     {
+        [SerializeField] private new AudioSource audio;
         [SerializeField] private GameObject skidPrefab;
         [SerializeField] private WheelCollider[] wheels;
         [SerializeField] private ParticleSystem[] wheelsSmoke;
@@ -14,12 +14,10 @@ namespace Racing
 
         private WheelHit wheelHit;
         private Transform[] skidTrail;
-        private new AudioSource audio;
 
         private void Start()
         {
             skidTrail = new Transform[wheels.Length];
-            audio = GetComponent<AudioSource>();
         }
 
         private void Update()
