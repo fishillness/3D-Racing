@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Racing 
@@ -6,6 +7,8 @@ namespace Racing
     public class Car : MonoBehaviour
     {
         #region Properties
+        public event Action OnGearboxChanged;
+
         [SerializeField] private float maxSteerAngle;
         [SerializeField] private float maxBrakeTorque;
         [SerializeField] private float maxSpeed;
@@ -78,21 +81,25 @@ namespace Racing
         public void UpGear()
         {
             ShiftGear(selectedGearIndex + 1);
+            OnGearboxChanged?.Invoke();
         }
 
         public void DownGear()
         {
             ShiftGear(selectedGearIndex - 1);
+            OnGearboxChanged?.Invoke();
         }
 
         public void ShiftToReverseGear()
         {
             selectedGear = rearGear;
+            OnGearboxChanged?.Invoke();
         }
 
         public void ShiftToFirstGear()
         {
             ShiftGear(0);
+            OnGearboxChanged?.Invoke();
         }
 
         public void ShiftToNetral()
