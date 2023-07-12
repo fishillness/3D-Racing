@@ -13,6 +13,7 @@ namespace Racing
 
         private PostProcessVolume processVolume;
         private Vignette vignette;
+        private ChromaticAberration aberration;
 
         private float vignetteIncrease;
         private float vignetteDecrease;
@@ -21,6 +22,7 @@ namespace Racing
         {
             processVolume = GetComponent<PostProcessVolume>();
             processVolume.profile.TryGetSettings(out vignette);
+            processVolume.profile.TryGetSettings(out aberration);
         }
 
         private void Update()
@@ -32,6 +34,7 @@ namespace Racing
                     vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, maxValueVignette, vignetteIncrease);
                     vignetteIncrease += Time.deltaTime / vignetteSpeed;
                 }
+                aberration.active = true;
             }
 
             if (car.NormaliaLinearVelocity <= normalizeSpeedVignette)
@@ -41,16 +44,8 @@ namespace Racing
                     vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0, vignetteDecrease);
                     vignetteDecrease += Time.deltaTime / vignetteSpeed;
                 }
+                aberration.active = false;
             }
-
-            if (Input.GetKeyDown(KeyCode.V)) vignetteDecrease = 0;
-            if (Input.GetKeyDown(KeyCode.F)) vignetteIncrease = 0;
-            
-            
-            /*
-            if (Input.GetKeyDown(KeyCode.B))
-                bloom.active = !bloom.active;
-            */
         }
 
     }
