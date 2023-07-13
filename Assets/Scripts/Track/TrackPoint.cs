@@ -6,6 +6,8 @@ namespace Racing
     public class TrackPoint : MonoBehaviour
     {
         public event UnityAction<TrackPoint> OnTriggered;
+        protected virtual void OnPassed() { }
+        protected virtual void OnAssignAsTarget() { }
 
         public TrackPoint Next;
         public bool IsFirst;
@@ -24,11 +26,13 @@ namespace Racing
         public void Passed()
         {
             isTarget = false;
+            OnPassed();
         }
 
         public void AssignAsTarget()
         {
             isTarget = true;
+            OnAssignAsTarget();
         }
 
         public void Reset()
