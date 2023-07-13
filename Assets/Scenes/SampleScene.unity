@@ -4033,10 +4033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  points:
-  - {fileID: 986035894}
-  - {fileID: 1840290615}
-  - {fileID: 175521461}
 --- !u!4 &1222101864
 Transform:
   m_ObjectHideFlags: 0

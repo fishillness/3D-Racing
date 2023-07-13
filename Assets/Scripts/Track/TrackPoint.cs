@@ -31,6 +31,12 @@ namespace Racing
             isTarget = true;
         }
 
+        public void Reset()
+        {
+            Next = null;
+            IsFirst = false;
+            IsLast = false;
+        }
     }
 }
 

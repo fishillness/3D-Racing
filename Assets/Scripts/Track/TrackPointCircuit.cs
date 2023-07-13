@@ -5,18 +5,25 @@ namespace Racing
 {
     public class TrackPointCircuit : MonoBehaviour
     {
+        #region Properties
         public event UnityAction<TrackPoint> OnTrackPointTriggered;
         public event UnityAction<int> OnCompletedLap;
 
         [SerializeField] private TrackType type;
-        [SerializeField] private TrackPoint[] points;
-
+        
+        private TrackPoint[] points;
         private int lapsCompleted = -1;
+        #endregion
+
+        #region Unity Events
+
+        private void Awake()
+        {
+            BuildCircuit();
+        }
 
         private void Start()
         {
-            OnCompletedLap += (t) => Debug.Log("Lap completed");
-
             for (int i = 0; i < points.Length; i++)
             {
                 points[i].OnTriggered += TrackPointTriggered;
@@ -31,6 +38,43 @@ namespace Racing
             {
                 points[i].OnTriggered -= TrackPointTriggered;
             }
+        }
+        #endregion
+
+        #region Private methods
+        [ContextMenu(nameof(BuildCircuit))]
+        private void BuildCircuit()
+        {
+            points = new TrackPoint[transform.childCount];
+
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i] = transform.GetChild(i).GetComponent<TrackPoint>();
+
+                if (points[i] == null)
+                {
+                    Debug.LogError("There is no TrackPoint script on one of the child objects.");
+                    return;
+                }
+
+                points[i].Reset();
+            }
+
+            for (int i = 0; i < points.Length - 1; i++)
+            {
+                points[i].Next = points[i + 1];
+            }
+
+            points[0].IsFirst = true;
+
+            if (type == TrackType.Circular)
+            {
+                points[0].IsLast = true;
+                points[points.Length - 1].Next = points[0];
+            }
+
+            if (type == TrackType.Sprint)
+                points[points.Length - 1].IsLast = true;
         }
 
         private void TrackPointTriggered(TrackPoint trackPoint)
@@ -52,6 +96,7 @@ namespace Racing
                         OnCompletedLap?.Invoke(lapsCompleted);
             }
         }
+        #endregion
     }
 }
 
