@@ -13,6 +13,8 @@ namespace Racing
         
         private TrackPoint[] points;
         private int lapsCompleted = -1;
+
+        public TrackType TrackType => type;
         #endregion
 
         #region Unity Events
