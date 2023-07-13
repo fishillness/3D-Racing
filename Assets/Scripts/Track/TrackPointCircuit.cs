@@ -45,36 +45,7 @@ namespace Racing
         [ContextMenu(nameof(BuildCircuit))]
         private void BuildCircuit()
         {
-            points = new TrackPoint[transform.childCount];
-
-            for (int i = 0; i < points.Length; i++)
-            {
-                points[i] = transform.GetChild(i).GetComponent<TrackPoint>();
-
-                if (points[i] == null)
-                {
-                    Debug.LogError("There is no TrackPoint script on one of the child objects.");
-                    return;
-                }
-
-                points[i].Reset();
-            }
-
-            for (int i = 0; i < points.Length - 1; i++)
-            {
-                points[i].Next = points[i + 1];
-            }
-
-            points[0].IsFirst = true;
-
-            if (type == TrackType.Circular)
-            {
-                points[0].IsLast = true;
-                points[points.Length - 1].Next = points[0];
-            }
-
-            if (type == TrackType.Sprint)
-                points[points.Length - 1].IsLast = true;
+            points = TrackCircuitBuilder.Build(transform, type);
         }
 
         private void TrackPointTriggered(TrackPoint trackPoint)
