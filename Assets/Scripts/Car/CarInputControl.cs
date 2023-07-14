@@ -89,5 +89,16 @@ namespace Racing
                 car.BrakeControl = breakCurve.Evaluate(wheelSpeed / maxSpeed) * autoBreakStrength;
             }
         }
+
+        public void Stop()
+        {
+            verticalAxis = 0;
+            horizontalAxis = 0;
+            //handBreakAxis = 0;
+
+            car.ThrottleControl = 0;
+            car.SteerControl = 0;
+            car.BrakeControl = 1;
+        }
     }
 }
