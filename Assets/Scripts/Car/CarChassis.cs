@@ -34,6 +34,7 @@ namespace Racing
 
         private new Rigidbody rigidbody;
 
+        public Rigidbody Rigidbody => rigidbody == null? GetComponent<Rigidbody>() : rigidbody;
         public float LinearVelocity => rigidbody.velocity.magnitude * 3.6f;
         #endregion
 

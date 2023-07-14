@@ -3,9 +3,8 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace Racing
 {
-    public class VignetteController : MonoBehaviour
+    public class CarCameraVignetteController : CarCameraComponent
     {
-        [SerializeField] private Car car;
         [SerializeField]
         [Range(0.0f, 1.0f)] private float normalizeSpeedVignette;
         [SerializeField] [Range(0f, 1f)] private float maxValueVignette;

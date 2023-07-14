@@ -41,6 +41,8 @@ namespace Racing
         public float BrakeControl;
         //public float HandBrakeControl;
 
+        public Rigidbody Rigidbody => chassis == null ? 
+            GetComponent<CarChassis>().Rigidbody : chassis.Rigidbody;
         public float MaxSpeed => maxSpeed;
         public float LinearVelocity => chassis.LinearVelocity;
         public float NormaliaLinearVelocity => chassis.LinearVelocity / maxSpeed;

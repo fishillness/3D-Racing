@@ -5782,6 +5782,7 @@ GameObject:
   - component: {fileID: 1721214212}
   - component: {fileID: 1721214211}
   - component: {fileID: 1721214213}
+  - component: {fileID: 1721214214}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5867,8 +5868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd7b1c539e3fe24e83d921f4a61f82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 959476807}
-  rigidbody: {fileID: 959476806}
   viewHeight: 2.16
   height: 2.76
   distance: 6
@@ -5887,7 +5886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0cccfd5c3ba1546ba98584fb62bb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 959476804}
   minFieldOfView: 70
   maxFieldOfView: 75
 --- !u!114 &1721214210
@@ -5902,7 +5900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df7af242e76ff940a6234fe330383a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 959476804}
   normalizeSpeedShake: 0.5
   shakeAmount: 2
 --- !u!114 &1721214211
@@ -5994,10 +5991,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617f4c412995d674d8c0f8e042c40aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 959476804}
   normalizeSpeedVignette: 0.5
   maxValueVignette: 0.3
   vignetteSpeed: 1
+--- !u!114 &1721214214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721214204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e132b6e166eea41b73a407454837e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 959476804}
+  camera: {fileID: 1721214205}
+  follower: {fileID: 1721214208}
+  shaker: {fileID: 1721214210}
+  fovCorrector: {fileID: 1721214209}
+  vignetteController: {fileID: 1721214213}
 --- !u!1 &1744412025
 GameObject:
   m_ObjectHideFlags: 0
