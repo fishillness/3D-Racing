@@ -13,6 +13,7 @@ namespace Racing
         public event UnityAction<int> OnCompletedLap;
 
         [SerializeField] private TrackPointCircuit trackPointCircuit;
+        [SerializeField] private Timer countdownTimer;
         [SerializeField] private int lapsToComplete;
 
         private RaceState state;
@@ -23,15 +24,18 @@ namespace Racing
         private void Start()
         {
             StartState(RaceState.Preparation);
+            countdownTimer.enabled = false;
 
             trackPointCircuit.OnTrackPointTriggered += OnTrackPointTriggeted;
             trackPointCircuit.OnCompletedLap += OnLapCompleted;
+            countdownTimer.OnFinished += OnCountdownTimerFinished;
         }
 
         private void OnDestroy()
         {
             trackPointCircuit.OnTrackPointTriggered -= OnTrackPointTriggeted;
             trackPointCircuit.OnCompletedLap -= OnLapCompleted;
+            countdownTimer.OnFinished -= OnCountdownTimerFinished;
         }
         #endregion
 
@@ -56,6 +60,11 @@ namespace Racing
                     CompleteLap(lapAmount);
             }
         }
+
+        private void OnCountdownTimerFinished()
+        {
+            StartRace();
+        }
         #endregion
 
         #region Race state control
@@ -64,6 +73,7 @@ namespace Racing
             if (state != RaceState.Preparation) return;
 
             StartState(RaceState.CountDown);
+            countdownTimer.enabled = true;
             OnPreparationStarted?.Invoke();
         }
 
