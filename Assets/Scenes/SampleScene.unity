@@ -5790,10 +5790,10 @@ GameObject:
   - component: {fileID: 1721214208}
   - component: {fileID: 1721214209}
   - component: {fileID: 1721214210}
+  - component: {fileID: 1721214215}
   - component: {fileID: 1721214213}
   - component: {fileID: 1721214212}
   - component: {fileID: 1721214211}
-  - component: {fileID: 1721214215}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6019,9 +6019,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car: {fileID: 959476804}
   camera: {fileID: 1721214205}
+  raceStateTracker: {fileID: 378759852}
   follower: {fileID: 1721214208}
   shaker: {fileID: 1721214210}
   fovCorrector: {fileID: 1721214209}
+  pathFollower: {fileID: 1721214215}
   vignetteController: {fileID: 1721214213}
 --- !u!114 &1721214215
 MonoBehaviour:
