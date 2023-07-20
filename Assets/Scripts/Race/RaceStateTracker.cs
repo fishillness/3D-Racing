@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Racing
 {
-    public class RaceStateTracker : MonoBehaviour
+    public class RaceStateTracker : MonoBehaviour, IDependencyTrackPointCircuit
     {
         #region Properties
         public event UnityAction OnPreparationStarted;
@@ -12,9 +12,12 @@ namespace Racing
         public event UnityAction<TrackPoint> OnTrackPointPassed;
         public event UnityAction<int> OnCompletedLap;
 
-        [SerializeField] private TrackPointCircuit trackPointCircuit;
         [SerializeField] private Timer countdownTimer;
         [SerializeField] private int lapsToComplete;
+
+        private TrackPointCircuit trackpointCircuit;
+        public void Construct(TrackPointCircuit trackpointCircuit) =>
+                           this.trackpointCircuit = trackpointCircuit;
 
         private RaceState state;
         public RaceState RaceState => state;
@@ -26,18 +29,19 @@ namespace Racing
             StartState(RaceState.Preparation);
             countdownTimer.enabled = false;
 
-            trackPointCircuit.OnTrackPointTriggered += OnTrackPointTriggeted;
-            trackPointCircuit.OnCompletedLap += OnLapCompleted;
+            trackpointCircuit.OnTrackPointTriggered += OnTrackPointTriggeted;
+            trackpointCircuit.OnCompletedLap += OnLapCompleted;
             countdownTimer.OnFinished += OnCountdownTimerFinished;
         }
 
         private void OnDestroy()
         {
-            trackPointCircuit.OnTrackPointTriggered -= OnTrackPointTriggeted;
-            trackPointCircuit.OnCompletedLap -= OnLapCompleted;
+            trackpointCircuit.OnTrackPointTriggered -= OnTrackPointTriggeted;
+            trackpointCircuit.OnCompletedLap -= OnLapCompleted;
             countdownTimer.OnFinished -= OnCountdownTimerFinished;
         }
         #endregion
+
 
         #region Methods called on an event
         private void OnTrackPointTriggeted(TrackPoint trackPoint)
@@ -47,12 +51,12 @@ namespace Racing
 
         private void OnLapCompleted(int lapAmount)
         {
-            if (trackPointCircuit.TrackType == TrackType.Sprint)
+            if (trackpointCircuit.TrackType == TrackType.Sprint)
             {
                 CompleteRace();
             }
 
-            if (trackPointCircuit.TrackType == TrackType.Circular)
+            if (trackpointCircuit.TrackType == TrackType.Circular)
             {
                 if (lapAmount == lapsToComplete)
                     CompleteRace();
@@ -103,5 +107,6 @@ namespace Racing
         {
             this.state = state;
         }
+
     }
 }
