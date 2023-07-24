@@ -3,11 +3,13 @@ using UnityEngine.UI;
 
 namespace Racing
 {
-    public class UICountdownTimer : MonoBehaviour
+    public class UICountdownTimer : MonoBehaviour, IDependency<RaceStateTracker>
     {
-        [SerializeField] private RaceStateTracker raceStateTracker;
         [SerializeField] private Text text;
-        [SerializeField] private Timer countdownTimer;
+
+        private Timer countdownTimer;
+        private RaceStateTracker raceStateTracker;
+        public void Construct(RaceStateTracker obj) => raceStateTracker = obj;
 
         private void Start()
         {
@@ -19,7 +21,7 @@ namespace Racing
 
         private void Update()
         {
-            text.text = countdownTimer.Value.ToString("F0");
+            text.text = raceStateTracker.CountDownTimer.Value.ToString("F0");
 
             if (text.text == "0")
                 text.text = "GO!";

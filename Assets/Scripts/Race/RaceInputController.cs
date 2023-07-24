@@ -2,10 +2,15 @@ using UnityEngine;
 
 namespace Racing
 {
-    public class RaceInputController : MonoBehaviour
+    public class RaceInputController : MonoBehaviour,
+        IDependency<CarInputControl>, IDependency<RaceStateTracker>
     {
         [SerializeField] private CarInputControl carControl;
-        [SerializeField] private RaceStateTracker raceStateTracker;
+        public void Construct(CarInputControl obj) => carControl = obj;
+
+        private RaceStateTracker raceStateTracker;
+        public void Construct(RaceStateTracker obj) => raceStateTracker = obj;
+
 
         private void Start()
         {

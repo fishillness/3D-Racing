@@ -4,20 +4,31 @@ namespace Racing
 {
     public class SceneDependencies : MonoBehaviour
     {
+        [Header("Car")]
+        [SerializeField] private Car car;
+        [SerializeField] private CarInputControl carInputControl;
+        [SerializeField] private CarCameraController carCameraController;
+        [Header("Others")]
         [SerializeField] private TrackPointCircuit trackPointCircuit;
+        [SerializeField] private RaceStateTracker raceStateTracker;
 
         private void Awake()
         {
-            MonoBehaviour[] allMono = FindObjectsOfType<MonoBehaviour>();
+            MonoBehaviour[] allMonoInScene = FindObjectsOfType<MonoBehaviour>();
             
-            for (int i = 0; i < allMono.Length; i++)
+            for (int i = 0; i < allMonoInScene.Length; i++)
             {
-                if (allMono[i] is IDependencyTrackPointCircuit)
-                {
-                    (allMono[i] as IDependencyTrackPointCircuit).Construct(trackPointCircuit);
-                }
+                Bind(allMonoInScene[i]);
             }
         }
 
+        private void Bind(MonoBehaviour mono)
+        {
+            (mono as IDependency<Car>)?.Construct(car);
+            (mono as IDependency<CarInputControl>)?.Construct(carInputControl);
+            (mono as IDependency<CarCameraController>)?.Construct(carCameraController);
+            (mono as IDependency<TrackPointCircuit>)?.Construct(trackPointCircuit);
+            (mono as IDependency<RaceStateTracker>)?.Construct(raceStateTracker);
+        }
     }
 }

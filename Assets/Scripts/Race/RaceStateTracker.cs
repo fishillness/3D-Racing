@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Racing
 {
-    public class RaceStateTracker : MonoBehaviour, IDependencyTrackPointCircuit
+    public class RaceStateTracker : MonoBehaviour, IDependency<TrackPointCircuit>
     {
         #region Properties
         public event UnityAction OnPreparationStarted;
@@ -21,6 +21,7 @@ namespace Racing
 
         private RaceState state;
         public RaceState RaceState => state;
+        public Timer CountDownTimer => countdownTimer;
         #endregion
 
         #region Unity Events

@@ -3,11 +3,10 @@ using UnityEngine;
 
 namespace Racing
 {
-    public class CarCameraController : MonoBehaviour
+    public class CarCameraController : MonoBehaviour, IDependency<RaceStateTracker>
     {
         [SerializeField] private Car car;
         [SerializeField] private new Camera camera;
-        [SerializeField] private RaceStateTracker raceStateTracker;
 
         [Header("Camera Components")]
         [SerializeField] private CarCameraFollow follower;
@@ -15,6 +14,9 @@ namespace Racing
         [SerializeField] private CarCameraFovCorrector fovCorrector;
         [SerializeField] private CarCameraPathFollower pathFollower;
         [SerializeField] private CarCameraVignetteController vignetteController;
+
+        private RaceStateTracker raceStateTracker;
+        public void Construct(RaceStateTracker obj) => raceStateTracker = obj;
 
         private void Awake()
         {

@@ -1399,7 +1399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b51cb8c13eebd4380802a3bab5a9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackPointCircuit: {fileID: 1222101863}
   countdownTimer: {fileID: 2141931577}
   lapsToComplete: 1
 --- !u!1 &384351909
@@ -2081,7 +2080,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carControl: {fileID: 1596615158}
-  raceStateTracker: {fileID: 378759852}
 --- !u!1 &466042495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,7 +2658,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d913af8386cbc1a439ca8cdaa0776723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  car: {fileID: 959476804}
+  carInputControl: {fileID: 1596615158}
+  carCameraController: {fileID: 1721214214}
   trackPointCircuit: {fileID: 1222101863}
+  raceStateTracker: {fileID: 378759852}
 --- !u!1 &697526265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6064,7 +6066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car: {fileID: 959476804}
   camera: {fileID: 1721214205}
-  raceStateTracker: {fileID: 378759852}
   follower: {fileID: 1721214208}
   shaker: {fileID: 1721214210}
   fovCorrector: {fileID: 1721214209}
@@ -6927,9 +6928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e7e1feb0440a940afcda39cfbab7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raceStateTracker: {fileID: 378759852}
   text: {fileID: 647695322}
-  countdownTimer: {fileID: 2141931577}
 --- !u!114 &1870693271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7508,7 +7507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97937ab1e9f7d8e48b7da953d679558c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raceStateTracker: {fileID: 378759852}
 --- !u!1 &2090055745
 GameObject:
   m_ObjectHideFlags: 0
