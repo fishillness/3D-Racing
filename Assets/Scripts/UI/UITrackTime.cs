@@ -6,13 +6,14 @@ namespace Racing
     public class UITrackTime : MonoBehaviour,
         IDependency<RaceTimeTracker>, IDependency<RaceStateTracker>
     {
+        [SerializeField] private Text text;
+
+
         private RaceTimeTracker raceTimeTracker;
         public void Construct(RaceTimeTracker obj) => raceTimeTracker = obj;
 
         private RaceStateTracker raceStateTracker;
         public void Construct(RaceStateTracker obj) => raceStateTracker = obj;
-
-        [SerializeField] private Text text;
 
         private void Start()
         {

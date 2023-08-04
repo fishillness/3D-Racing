@@ -12,6 +12,7 @@ namespace Racing
         [SerializeField] private TrackPointCircuit trackPointCircuit;
         [SerializeField] private RaceStateTracker raceStateTracker;
         [SerializeField] private RaceTimeTracker raceTimeTracker;
+        [SerializeField] private RaceResultTime raceResultTime;
 
         private void Awake()
         {
@@ -31,6 +32,7 @@ namespace Racing
             (mono as IDependency<TrackPointCircuit>)?.Construct(trackPointCircuit);
             (mono as IDependency<RaceStateTracker>)?.Construct(raceStateTracker);
             (mono as IDependency<RaceTimeTracker>)?.Construct(raceTimeTracker);
+            (mono as IDependency<RaceResultTime>)?.Construct(raceResultTime);
         }
     }
 }
