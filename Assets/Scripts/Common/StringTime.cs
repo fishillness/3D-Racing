@@ -6,7 +6,7 @@ namespace Racing
     {
         public static string SecondToTimeString(float second)
         {
-            return TimeSpan.FromSeconds(second).ToString(@"mm\:ss\.ff");
+            return TimeSpan.FromSeconds(second).ToString(@"mm\:ss\:ff");
         }
     }
 }
