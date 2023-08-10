@@ -7798,7 +7798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 1027402273}
   lookTarget: {fileID: 1249465959}
-  movementSpeed: 10
+  movementSpeed: 5
 --- !u!1 &1744412025
 GameObject:
   m_ObjectHideFlags: 0
