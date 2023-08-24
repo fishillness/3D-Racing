@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6648631207218105907}
   - component: {fileID: 982571087313598382}
-  - component: {fileID: 6979336313057339994}
-  - component: {fileID: 3513792238979905711}
+  - component: {fileID: 6283939562423326443}
   m_Layer: 5
   m_Name: MenuItemButton
   m_TagString: Untagged
@@ -61,7 +60,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &6979336313057339994
+--- !u!114 &6283939562423326443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,37 +69,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3742133588094578400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Script: {fileID: 11500000, guid: cd4f65f95c73dc844b00338b986a6e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
---- !u!114 &3513792238979905711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742133588094578400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+  Interactable: 1
+  OnSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUnSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  selectImage: {fileID: 3768368564244619597}
 --- !u!1 &3768368564244619599
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3768368564244619598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -154,7 +136,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3768368564244619599}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

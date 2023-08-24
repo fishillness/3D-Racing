@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Racing
 {
@@ -10,8 +9,8 @@ namespace Racing
         private UISelectableButton[] buttons;
         private int selectButtonIndex = 0;
 
-        private bool Interactable = true;
-        public bool SetInteractable(bool interactable) => Interactable = interactable;
+        public bool Interactable = true;
+        public void SetInteractable(bool interactable) => Interactable = interactable;
 
         private void Start()
         {
