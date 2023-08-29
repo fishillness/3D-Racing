@@ -5129,9 +5129,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1789541341845929427, guid: bf7d34159cd640240be7ea21ddbe5f15, type: 3}
+      propertyPath: setting
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e24861c9082a57409c1f7edb1b2566a, type: 2}
     - target: {fileID: 1959529696055446018, guid: bf7d34159cd640240be7ea21ddbe5f15, type: 3}
       propertyPath: m_Name
-      value: SettingButton (3)
+      value: ResolutionSettingButton
       objectReference: {fileID: 0}
     - target: {fileID: 7091621440754908780, guid: bf7d34159cd640240be7ea21ddbe5f15, type: 3}
       propertyPath: m_AnchoredPosition.y
