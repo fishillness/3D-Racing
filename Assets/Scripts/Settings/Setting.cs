@@ -13,6 +13,7 @@ namespace Racing
         public virtual void SetNextValue() { }
         public virtual void SetPreviousValue() { }
         public virtual object GetValue() { return default(object); }
-        public virtual string GetStringValue() { return string.Empty; } 
+        public virtual string GetStringValue() { return string.Empty; }
+        public virtual void Apply() { }
     }
 }
