@@ -15,5 +15,6 @@ namespace Racing
         public virtual object GetValue() { return default(object); }
         public virtual string GetStringValue() { return string.Empty; }
         public virtual void Apply() { }
+        public virtual void Load() { }
     }
 }

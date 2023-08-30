@@ -39,6 +39,16 @@ namespace Racing
         public override void Apply()
         {
             QualitySettings.SetQualityLevel(currentLevelIndex);
+            Save();
+        }
+        public override void Load()
+        {
+            currentLevelIndex = PlayerPrefs.GetInt(title, 0);
+        }
+
+        private void Save()
+        {
+            PlayerPrefs.SetInt(title, currentLevelIndex);
         }
 
     }

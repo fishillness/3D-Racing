@@ -46,6 +46,7 @@ namespace Racing
         public override void Apply()
         {
             audioMixer.SetFloat(nameParameter, currentValue);
+            Save();
         }
 
         private void AddValue(float value)
@@ -54,6 +55,15 @@ namespace Racing
             currentValue = Mathf.Clamp(currentValue, minRealValue, maxRealValue);
         }
 
+        public override void Load()
+        {
+            currentValue = PlayerPrefs.GetFloat(title, 0);
+        }
+
+        private void Save()
+        {
+            PlayerPrefs.SetFloat(title, currentValue);
+        }
     }
 }
 
