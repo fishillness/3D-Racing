@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 namespace Racing
 {
-    public class UIRaceButton : UISelectableButton
+    public class UIRaceButton : UISelectableButton, IScriptableObjectProperty
     {
         [SerializeField] private RaceInfo raceInfo;
         [SerializeField] private Image icon;
@@ -25,11 +25,14 @@ namespace Racing
             SceneManager.LoadScene(raceInfo.SceneName);
         }
 
-        public void ApplyProperty(RaceInfo property)
+        public void ApplyProperty(ScriptableObject property)
         {
             if (property == null) return;
 
-            raceInfo = property;
+            if (property is RaceInfo == false)
+                return;
+            raceInfo = property as RaceInfo;
+
             icon.sprite = raceInfo.Icon;
             title.text = raceInfo.Title;
         }
