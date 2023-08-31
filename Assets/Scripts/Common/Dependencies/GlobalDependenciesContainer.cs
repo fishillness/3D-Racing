@@ -5,6 +5,8 @@ namespace Racing
 {
     public class GlobalDependenciesContainer : Dependency
     {
+        [SerializeField] private Pauser pauser;
+
         private static GlobalDependenciesContainer instance;
 
         private void Awake()
@@ -31,9 +33,9 @@ namespace Racing
             FindAllObjectToBind();
         }
 
-        protected override void BindAll(MonoBehaviour mono)
+        protected override void BindAll(MonoBehaviour monoBehaviourInScene)
         {
-
+            Bind<Pauser>(pauser, monoBehaviourInScene);
         }
 
     }

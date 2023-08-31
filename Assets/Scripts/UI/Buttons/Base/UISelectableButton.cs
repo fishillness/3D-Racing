@@ -16,9 +16,7 @@ namespace Racing
         {
             base.SetFocuse();
 
-            Debug.Log($"SET selectImage = {selectImage}. active? {selectImage.IsActive()}");
             selectImage.enabled = true;
-            Debug.Log($"SET selectImage = {selectImage}. active? {selectImage.IsActive()}");
             OnSelect?.Invoke();
         }
 
@@ -26,10 +24,7 @@ namespace Racing
         {
             base.SetUnFocuse();
 
-
-            Debug.Log($"UNSET selectImage = {selectImage}. active? {selectImage.IsActive()}");
             selectImage.enabled = false;
-            Debug.Log($"UNSET selectImage = {selectImage}. active? {selectImage.IsActive()}");
             OnUnSelect?.Invoke();
         }
     }
