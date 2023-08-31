@@ -33,6 +33,11 @@ namespace Racing
             panel.SetActive(isPause);
         }
 
+        public void UnPause()
+        {
+            pauser.UnPause();
+        }
+
     }
 }
 
