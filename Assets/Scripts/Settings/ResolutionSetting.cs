@@ -55,7 +55,7 @@ namespace Racing
 
         public override void Load()
         {
-            currentResolutionIndex = PlayerPrefs.GetInt(title, 0);
+            currentResolutionIndex = PlayerPrefs.GetInt(title, avalibaleResolutions.Length - 1);
         }
 
         private void Save()
