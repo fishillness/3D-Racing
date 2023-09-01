@@ -34,11 +34,14 @@ namespace Racing
             UpdateAutoBreak();
             //UpdateBreak();
 
+
+            /*
             //DEBUG
             if (Input.GetKeyDown(KeyCode.E))
                 car.UpGear();
             if (Input.GetKeyDown(KeyCode.Q))
                 car.DownGear();
+            */
         }
 
         private void UpdateAxis()
