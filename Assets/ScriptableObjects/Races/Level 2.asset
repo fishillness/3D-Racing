@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e01abf3612a754ebeaa3d6a830c356, type: 3}
-  m_Name: TestRace
+  m_Name: Level 2
   m_EditorClassIdentifier: 
-  sceneName: Test_scene
+  sceneName: Level 2
   icon: {fileID: 1401871031, guid: d78cf789069b9bd438be0a008c6a310b, type: 3}
-  title: Test race
+  title: Level 2
