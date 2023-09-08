@@ -9,8 +9,12 @@ namespace Racing
         [SerializeField] private Text resultText;
         [SerializeField] private GameObject congratulations;
         [SerializeField] private Text goldTimeText;
+        [SerializeField] private Text silverTimeText;
+        [SerializeField] private Text bronzeTimeTetx;
         [SerializeField] private Text recordText;
+        [SerializeField] private GameObject nextButton;
 
+        private SceneLoader sceneLoader;
         private RaceResultTime raceResultTime;
         public void Construct(RaceResultTime obj) => raceResultTime = obj;
         
@@ -18,6 +22,7 @@ namespace Racing
         {
             raceResultTime.OnResultsUpdated += DisplayResult;
             panel.SetActive(false);
+            sceneLoader = gameObject.GetComponent<SceneLoader>();
         }
 
         private void OnDestroy()
@@ -31,9 +36,14 @@ namespace Racing
 
             resultText.text = StringTime.SecondToTimeString(raceResultTime.CurrentTime);
             goldTimeText.text = StringTime.SecondToTimeString(raceResultTime.GoldTime);
+            silverTimeText.text = StringTime.SecondToTimeString(raceResultTime.SilverTime);
+            bronzeTimeTetx.text = StringTime.SecondToTimeString(raceResultTime.BronzeTime);
             recordText.text = StringTime.SecondToTimeString(raceResultTime.PlayerRecordTime);
 
             congratulations.SetActive(raceResultTime.CurrentTime == raceResultTime.PlayerRecordTime);
+
+            if (sceneLoader.IsLastLevel)
+                nextButton.SetActive(false);
         }
     }
 }

@@ -4,9 +4,9 @@ namespace Racing
 {
     public class SeasonList : MonoBehaviour
     {
-        [SerializeField] private Season[] seasonsList;
+        [SerializeField] private Season[] seasons;
 
-        public Season[] SeasonsList => seasonsList;
+        public Season[] Seasons => seasons;
     }
 }
 

@@ -11,11 +11,16 @@ namespace Racing
         public event UnityAction OnResultsUpdated;
 
         [SerializeField] private float goldTime;
+        [SerializeField] private float silverTime;
+        [SerializeField] private float bronzeTime;
 
         private float playerRecordTime;
         private float currentTime;
 
         public float GoldTime => goldTime;
+        public float SilverTime => silverTime;
+        public float BronzeTime => bronzeTime;
+
         public float PlayerRecordTime => playerRecordTime;
         public float CurrentTime => currentTime;
         public bool RecordWasSet => playerRecordTime != 0;

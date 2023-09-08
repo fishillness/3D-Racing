@@ -11833,6 +11833,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1360422838, guid: 198481ebbd266d443b41dd0e79f6c31b, type: 3}
+      propertyPath: m_TagString
+      value: SeasonList
+      objectReference: {fileID: 0}
     - target: {fileID: 455516224975935516, guid: 198481ebbd266d443b41dd0e79f6c31b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -12830,4 +12834,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf7c6bf88cca484097025fa4a3eda59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seasons: []

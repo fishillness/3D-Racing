@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0aad60052fa55045b65fee95fa546a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seasonsList:
+  seasons:
   - {fileID: 11400000, guid: 30af0e2913a7bd54ab42b5cd5821acdd, type: 2}
 --- !u!1 &455516224186766177
 GameObject:
