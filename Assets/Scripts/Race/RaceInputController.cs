@@ -5,7 +5,7 @@ namespace Racing
     public class RaceInputController : MonoBehaviour,
         IDependency<CarInputControl>, IDependency<RaceStateTracker>
     {
-        [SerializeField] private CarInputControl carControl;
+        private CarInputControl carControl;
         public void Construct(CarInputControl obj) => carControl = obj;
 
         private RaceStateTracker raceStateTracker;

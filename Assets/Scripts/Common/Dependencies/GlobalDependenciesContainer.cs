@@ -5,7 +5,9 @@ namespace Racing
 {
     public class GlobalDependenciesContainer : Dependency
     {
+        [SerializeField] private SeasonList seasonList;
         [SerializeField] private Pauser pauser;
+        [SerializeField] private SettingsLoader settingsLoader;
 
         private static GlobalDependenciesContainer instance;
 
@@ -35,7 +37,9 @@ namespace Racing
 
         protected override void BindAll(MonoBehaviour monoBehaviourInScene)
         {
+            Bind<SeasonList>(seasonList, monoBehaviourInScene);
             Bind<Pauser>(pauser, monoBehaviourInScene);
+            Bind<SettingsLoader>(settingsLoader, monoBehaviourInScene);
         }
 
     }

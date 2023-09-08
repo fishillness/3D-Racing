@@ -4,8 +4,8 @@ namespace Racing
 {
     public class SpawnObjectByPropertiesList : MonoBehaviour
     {
-        [SerializeField] private Transform parent;
-        [SerializeField] private GameObject prefab;
+        [SerializeField] protected Transform parent;
+        [SerializeField] protected GameObject prefab;
         [SerializeField] private ScriptableObject[] properties;
 
         [ContextMenu(nameof(SpawnInEditMode))]
@@ -25,6 +25,11 @@ namespace Racing
                 DestroyImmediate(allObject[i]);
             }
 
+            ApplyProperties();
+        }
+
+        protected virtual void ApplyProperties()
+        {
             for (int i = 0; i < properties.Length; i++)
             {
                 GameObject gameObject = Instantiate(prefab, parent);

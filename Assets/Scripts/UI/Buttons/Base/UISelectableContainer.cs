@@ -17,7 +17,7 @@ namespace Racing
             buttons = buttonsContainter.GetComponentsInChildren<UISelectableButton>();
 
             if (buttons == null)
-                Debug.LogError("Button lit i empty.");
+                Debug.LogError("Button list is empty.");
 
             for (int i = 0; i < buttons.Length; i++)
             {
@@ -41,7 +41,6 @@ namespace Racing
         {
             SelectButton(button);
         }
-
 
         private void SelectButton(UIButton button)
         {
