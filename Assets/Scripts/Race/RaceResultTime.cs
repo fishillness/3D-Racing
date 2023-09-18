@@ -7,7 +7,6 @@ namespace Racing
     public class RaceResultTime : MonoBehaviour,
         IDependency<RaceTimeTracker>, IDependency<RaceStateTracker>
     {
-        public static string SaveMark = "_player_best_time";
         public event UnityAction OnResultsUpdated;
 
         [SerializeField] private float goldTime;
@@ -75,12 +74,14 @@ namespace Racing
 
         private void Load()
         {
-            playerRecordTime = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + SaveMark, 0); 
+            playerRecordTime = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + 
+                Constants.SaveMarkPlayerRecordTime, 0); 
         }
 
         private void Save()
         {
-            PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name + SaveMark, playerRecordTime);
+            PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name +
+                Constants.SaveMarkPlayerRecordTime, playerRecordTime);
         }
 
         #endregion
