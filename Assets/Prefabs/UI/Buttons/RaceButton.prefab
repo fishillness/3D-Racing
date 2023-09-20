@@ -111,8 +111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000014305115}
-  m_SizeDelta: {x: 213.8002, y: 77.5235}
+  m_AnchoredPosition: {x: -0.0000022649765, y: -0.0000014305115}
+  m_SizeDelta: {x: 271.6434, y: 77.5235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4118994999132947185
 CanvasRenderer:
@@ -155,7 +155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You need \n0 cups"
+  m_Text: You need to pass the previous level
 --- !u!1 &1656344563707493122
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +486,7 @@ MonoBehaviour:
   raceInfo: {fileID: 0}
   icon: {fileID: 2031170505116899064}
   title: {fileID: 2031170504937100002}
+  block: {fileID: 3407354167671322871}
 --- !u!1 &2031170506088611898
 GameObject:
   m_ObjectHideFlags: 0

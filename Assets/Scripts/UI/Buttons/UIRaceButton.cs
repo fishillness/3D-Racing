@@ -10,6 +10,9 @@ namespace Racing
         [SerializeField] private RaceInfo raceInfo;
         [SerializeField] private Image icon;
         [SerializeField] private Text title;
+        [SerializeField] private GameObject block;
+
+        public RaceInfo RaceInfo => raceInfo;
 
         private void Start()
         {
@@ -36,5 +39,18 @@ namespace Racing
             icon.sprite = raceInfo.Icon;
             title.text = raceInfo.Title;
         }
+
+        public override void SetInteractable()
+        {
+            base.SetInteractable();
+            block.SetActive(false);
+        }
+
+        public override void SetNonInteractable()
+        {
+            base.SetNonInteractable();
+            block.SetActive(true);
+        }
+
     }
 }

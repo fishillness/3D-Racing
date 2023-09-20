@@ -53,5 +53,16 @@ namespace Racing
 
             focuse = false;
         }
+
+        public virtual void SetInteractable()
+        {
+            Interactable = true;
+        }
+
+        public virtual void SetNonInteractable()
+        {
+            Interactable = false;
+        }
+
     }
 }

@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace Racing
 {
     public static class LevelUtil
@@ -7,9 +9,9 @@ namespace Racing
         {
             for (int i = 0; i < seasonList.Seasons.Length; i++)
             {
-                for (int j = 0; j < seasonList.Seasons[i].RaceInfos.Length; j++) //LevelsName.Length; j++)
+                for (int j = 0; j < seasonList.Seasons[i].RaceInfos.Length; j++)
                 {
-                    if (seasonList.Seasons[i].RaceInfos[j].SceneName == levelName) //LevelsName[j] == levelName)
+                    if (seasonList.Seasons[i].RaceInfos[j].SceneName == levelName)
                     {
                         return new LevelIndex { season = seasonList.Seasons[i], number = j };
                     }
@@ -17,6 +19,11 @@ namespace Racing
             }
 
             return null;
+        }
+
+        public static float FindSavedPlayerRecordTimeByLevel(string levelName)
+        {
+            return PlayerPrefs.GetFloat(levelName + Constants.SaveMarkPlayerRecordTime, 0);
         }
     }
 }
