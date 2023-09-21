@@ -7,8 +7,9 @@ namespace Racing
     public class UISeasonButton : UISelectableButton, IScriptableObjectProperty
     {
         [SerializeField] Season season;
-        //[SerializeField] private Image icon;
+        [SerializeField] private Image icon;
         [SerializeField] private Text title;
+        [SerializeField] private Text titleInSeasonPanel;
 
         private void Start()
         {
@@ -23,8 +24,9 @@ namespace Racing
                 return;
 
             season = property as Season;
-            //icon.sprite = season.Icon;
+            icon.sprite = season.Icon;
             title.text = season.SeasonName;
+            titleInSeasonPanel.text = season.SeasonName;
         }
     }
 }
