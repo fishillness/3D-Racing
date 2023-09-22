@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Level 3
   m_EditorClassIdentifier: 
   sceneName: Level 3
-  icon: {fileID: 760448559, guid: d78cf789069b9bd438be0a008c6a310b, type: 3}
+  icon: {fileID: -2052605820, guid: 6ffcdd928f86b4743a7c9bccf78b2ce4, type: 3}
   title: Level 3
+  goldTime: 0
+  silverTime: 0
+  bronzeTime: 0
