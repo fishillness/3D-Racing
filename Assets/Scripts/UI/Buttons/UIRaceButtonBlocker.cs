@@ -12,7 +12,7 @@ namespace Racing
             BlockUIRaceButtons();
         }
 
-        private void BlockUIRaceButtons()
+        public void BlockUIRaceButtons()
         {
             if (uiRaceButtons == null) return;
 

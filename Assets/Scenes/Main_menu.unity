@@ -11000,6 +11000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bc40bd61c4243469e911872292ec78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiRaceButtonBlockers:
+  - {fileID: 1396321729}
+  - {fileID: 212136649}
 --- !u!1 &1540982055
 GameObject:
   m_ObjectHideFlags: 0
