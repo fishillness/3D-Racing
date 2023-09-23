@@ -33,7 +33,8 @@ namespace Racing
         private void Awake()
         {
             ApplyProperties(raceInfo);
-            Load();
+            playerRecordTime = Saves.LoadFloat(SceneManager.GetActiveScene().name +
+                Constants.SaveMarkPlayerRecordTime, 0);
         }
 
         private void Start()
@@ -53,7 +54,8 @@ namespace Racing
             if (raceTimeTracker.CurrentTime < absoluteRecord || playerRecordTime == 0)
             {
                 playerRecordTime = raceTimeTracker.CurrentTime;
-                Save();
+                Saves.SaveFloat(SceneManager.GetActiveScene().name +
+                    Constants.SaveMarkPlayerRecordTime, playerRecordTime);
             }
             currentTime = raceTimeTracker.CurrentTime;
             OnResultsUpdated?.Invoke();
@@ -77,21 +79,5 @@ namespace Racing
                 return goldTime;
             }
         }
-
-        #region Temporarily 
-
-        private void Load()
-        {
-            playerRecordTime = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + 
-                Constants.SaveMarkPlayerRecordTime, 0); 
-        }
-
-        private void Save()
-        {
-            PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name +
-                Constants.SaveMarkPlayerRecordTime, playerRecordTime);
-        }
-
-        #endregion
     }
 }

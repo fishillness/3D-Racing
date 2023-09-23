@@ -15,7 +15,7 @@ namespace Racing
 
             if (Input.GetKeyDown(KeyCode.F5) == true)
             {
-                PlayerPrefs.DeleteAll();
+                Saves.DeleteAllSaves();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }

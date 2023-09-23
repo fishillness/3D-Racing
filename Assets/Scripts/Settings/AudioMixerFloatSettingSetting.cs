@@ -57,12 +57,12 @@ namespace Racing
 
         public override void Load()
         {
-            currentValue = PlayerPrefs.GetFloat(title, 0);
+            currentValue = Saves.LoadFloat(title, 0);
         }
 
         private void Save()
         {
-            PlayerPrefs.SetFloat(title, currentValue);
+            Saves.SaveFloat(title, currentValue);
         }
     }
 }

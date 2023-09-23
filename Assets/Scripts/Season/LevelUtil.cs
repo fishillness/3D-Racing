@@ -23,7 +23,7 @@ namespace Racing
 
         public static float FindSavedPlayerRecordTimeByLevel(string levelName)
         {
-            return PlayerPrefs.GetFloat(levelName + Constants.SaveMarkPlayerRecordTime, 0);
+            return Saves.LoadFloat(levelName + Constants.SaveMarkPlayerRecordTime, 0);
         }
     }
 }

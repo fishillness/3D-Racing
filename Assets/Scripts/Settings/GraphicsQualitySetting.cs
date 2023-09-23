@@ -43,14 +43,13 @@ namespace Racing
         }
         public override void Load()
         {
-            currentLevelIndex = PlayerPrefs.GetInt(title, QualitySettings.names.Length - 1);
+            currentLevelIndex = Saves.LoadInt(title, QualitySettings.names.Length - 1);
         }
 
         private void Save()
         {
-            PlayerPrefs.SetInt(title, currentLevelIndex);
+            Saves.SaveInt(title, currentLevelIndex);
         }
-
     }
 }
 
