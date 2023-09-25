@@ -15,16 +15,12 @@ namespace Racing
         private void Start()
         {
             uiRaceButton = GetComponent<UIRaceButton>();
-
-            bronzeCup.enabled = false;
-            silverCup.enabled = false;
-            goldCup.enabled = false;
-
             CheckCups();
         }
 
         private void CheckCups()
         {
+            TurnOffAllCups();
             var result = LevelUtil.FindSavedPlayerRecordTimeByLevel(uiRaceButton.RaceInfo.SceneName);
 
             if (result == 0) return;
@@ -37,6 +33,13 @@ namespace Racing
 
             if (result <= uiRaceButton.RaceInfo.GoldTime)
                 goldCup.enabled = true;
+        }
+
+        private void TurnOffAllCups()
+        {
+            bronzeCup.enabled = false;
+            silverCup.enabled = false;
+            goldCup.enabled = false;
         }
     }
 }
