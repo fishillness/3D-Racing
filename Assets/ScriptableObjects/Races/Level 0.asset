@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e01abf3612a754ebeaa3d6a830c356, type: 3}
-  m_Name: Level 3
+  m_Name: Level 0
   m_EditorClassIdentifier: 
-  sceneName: Level 3
-  icon: {fileID: -2052605820, guid: 6ffcdd928f86b4743a7c9bccf78b2ce4, type: 3}
-  title: Level 3
-  goldTime: 0
-  silverTime: 0
-  bronzeTime: 0
+  sceneName: Level 0
+  icon: {fileID: 21300000, guid: f88f6537b2bdde64c86a5ddb90b3b2dd, type: 3}
+  title: Level 0
+  goldTime: 5
+  silverTime: 10
+  bronzeTime: 15
