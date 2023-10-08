@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seasons:
   - {fileID: 11400000, guid: 30af0e2913a7bd54ab42b5cd5821acdd, type: 2}
+  - {fileID: 11400000, guid: 21f8c401219473940b73e5b5dd45d4aa, type: 2}
 --- !u!1 &455516224186766177
 GameObject:
   m_ObjectHideFlags: 0

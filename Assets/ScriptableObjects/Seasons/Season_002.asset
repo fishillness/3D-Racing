@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seasonName: Autumn
   raceInfos:
-  - {fileID: 11400000, guid: 13d8adccc4b66c546a694a6f2cf20fca, type: 2}
+  - {fileID: 11400000, guid: 5b85fb9aac6ded6469db98c377bdda5f, type: 2}
+  - {fileID: 11400000, guid: 8a0d1a783f186034b9c622d9f889a878, type: 2}
   icon: {fileID: 1119765349, guid: 6ffcdd928f86b4743a7c9bccf78b2ce4, type: 3}

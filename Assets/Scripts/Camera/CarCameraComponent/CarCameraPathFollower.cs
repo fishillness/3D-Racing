@@ -13,6 +13,8 @@ namespace Racing
 
         private void Start()
         {
+            transform.position = lookTarget.position;
+
             points = new Vector3[path.childCount];
             for (int i = 0; i < points.Length; i++)
             {
