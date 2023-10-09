@@ -15,6 +15,6 @@ MonoBehaviour:
   sceneName: Level 3
   icon: {fileID: 803913765, guid: 6ffcdd928f86b4743a7c9bccf78b2ce4, type: 3}
   title: Level 3
-  goldTime: 5
-  silverTime: 10
-  bronzeTime: 15
+  goldTime: 21
+  silverTime: 25
+  bronzeTime: 30

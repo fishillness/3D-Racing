@@ -13,6 +13,8 @@ namespace Racing
         [SerializeField] private RaceStateTracker raceStateTracker;
         [SerializeField] private RaceTimeTracker raceTimeTracker;
         [SerializeField] private RaceResultTime raceResultTime;
+        [Header("Level")]
+        [SerializeField] private LevelDefiner levelDefiner;
 
         private void Awake()
         {
@@ -24,10 +26,13 @@ namespace Racing
             Bind<Car>(car, monoBehaviourInScene);
             Bind<CarInputControl>(carInputControl, monoBehaviourInScene);
             Bind<CarCameraController>(carCameraController, monoBehaviourInScene);
+           
             Bind<TrackPointCircuit>(trackPointCircuit, monoBehaviourInScene);
             Bind<RaceStateTracker>(raceStateTracker, monoBehaviourInScene);
             Bind<RaceTimeTracker>(raceTimeTracker, monoBehaviourInScene);
             Bind<RaceResultTime>(raceResultTime, monoBehaviourInScene);
+
+            Bind<LevelDefiner>(levelDefiner, monoBehaviourInScene);
         }
 
     }

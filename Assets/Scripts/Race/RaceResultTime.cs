@@ -1,16 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 namespace Racing
 {
     public class RaceResultTime : MonoBehaviour,
-        IDependency<RaceTimeTracker>, IDependency<RaceStateTracker>
+        IDependency<RaceTimeTracker>, IDependency<RaceStateTracker>, IDependency<LevelDefiner>
     {
         public event UnityAction OnResultsUpdated;
 
-        [SerializeField] private RaceInfo raceInfo;
-
+        private RaceInfo raceInfo;
         private float goldTime;
         private float silverTime;
         private float bronzeTime;
@@ -30,10 +28,15 @@ namespace Racing
         private RaceStateTracker raceStateTracker;
         public void Construct(RaceStateTracker obj) => raceStateTracker = obj;
 
+        private LevelDefiner levelDefiner;
+        public void Construct(LevelDefiner obj) => levelDefiner = obj;
+
         private void Awake()
         {
+            raceInfo = levelDefiner.RaceInfo;
+
             ApplyProperties(raceInfo);
-            playerRecordTime = Saves.LoadFloat(SceneManager.GetActiveScene().name +
+            playerRecordTime = Saves.LoadFloat(levelDefiner.SceneName +
                 Constants.SaveMarkPlayerRecordTime, 0);
         }
 
@@ -54,7 +57,7 @@ namespace Racing
             if (raceTimeTracker.CurrentTime < absoluteRecord || playerRecordTime == 0)
             {
                 playerRecordTime = raceTimeTracker.CurrentTime;
-                Saves.SaveFloat(SceneManager.GetActiveScene().name +
+                Saves.SaveFloat(levelDefiner.SceneName +
                     Constants.SaveMarkPlayerRecordTime, playerRecordTime);
             }
             currentTime = raceTimeTracker.CurrentTime;
