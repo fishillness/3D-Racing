@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be4762b2f9ebd34cbee8cc48d6762d4, type: 3}
   m_Name: Season_002
   m_EditorClassIdentifier: 
-  seasonName: Autumn
+  seasonName: Season 2
   raceInfos:
   - {fileID: 11400000, guid: 5b85fb9aac6ded6469db98c377bdda5f, type: 2}
   - {fileID: 11400000, guid: 8a0d1a783f186034b9c622d9f889a878, type: 2}

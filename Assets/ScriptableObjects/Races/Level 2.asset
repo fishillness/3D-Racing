@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: b435532119b58e84899f58d28d342262, type: 3}
   title: Level 2
   goldTime: 80
-  silverTime: 85
-  bronzeTime: 90
+  silverTime: 95
+  bronzeTime: 110

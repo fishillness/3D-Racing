@@ -4876,6 +4876,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1277056720834536704}
     m_Modifications:
     - target: {fileID: 83735058, guid: 35f245ec82dd465419ce2e0cb4c10650, type: 3}
+      propertyPath: season
+      value: 
+      objectReference: {fileID: 11400000, guid: 4793319fefc5deb41a5adc0ddcdb9033, type: 2}
+    - target: {fileID: 83735058, guid: 35f245ec82dd465419ce2e0cb4c10650, type: 3}
       propertyPath: Interactable
       value: 0
       objectReference: {fileID: 0}
@@ -11304,6 +11308,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1277056720834536704}
     m_Modifications:
+    - target: {fileID: 83735058, guid: 35f245ec82dd465419ce2e0cb4c10650, type: 3}
+      propertyPath: season
+      value: 
+      objectReference: {fileID: 11400000, guid: 150fcc22c8a2788488e27cf8c12b2f1a, type: 2}
     - target: {fileID: 83735058, guid: 35f245ec82dd465419ce2e0cb4c10650, type: 3}
       propertyPath: Interactable
       value: 0
