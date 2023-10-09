@@ -31,17 +31,13 @@ namespace Racing
         private LevelDefiner levelDefiner;
         public void Construct(LevelDefiner obj) => levelDefiner = obj;
 
-        private void Awake()
+        private void Start()
         {
             raceInfo = levelDefiner.RaceInfo;
-
             ApplyProperties(raceInfo);
             playerRecordTime = Saves.LoadFloat(levelDefiner.SceneName +
                 Constants.SaveMarkPlayerRecordTime, 0);
-        }
 
-        private void Start()
-        {
             raceStateTracker.OnCompleted += OnRaceCompleted;
         }
 
