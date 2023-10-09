@@ -3425,6 +3425,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8202564645747170451, guid: b91669e391442214c8168464e687a645, type: 3}
+      propertyPath: lapsToComplete
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8202564646114325698, guid: b91669e391442214c8168464e687a645, type: 3}
       propertyPath: car
       value: 
